@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
+import CountriesMap from "../components/CountriesMap";
 
 function Countries() {
   const { loading, error, data } = useQuery(gql`
@@ -23,11 +24,7 @@ function Countries() {
   `);
   if (loading) return <p>Loading .....</p>;
   if (error) return <p>Error :(</p>;
-  return data.countries.map((country: any) => (
-    <div key={country.id}>
-      <h3>{country.name}</h3>
-    </div>
-  ));
+  return <span>Hope</span>;
 }
 
 export default Countries;

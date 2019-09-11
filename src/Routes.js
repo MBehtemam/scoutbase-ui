@@ -1,14 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/container/Home";
-import CountriesIndex from "./pages/Countries/container/CountriesIndex";
+import Countries from "./pages/Countries/container/Countries";
+import Country from "./pages/Countries/container/Country";
+import NotFound from "./pages/NotFound/NotFound";
 
 const Routes = () => (
-  <Router>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/countries" component={CountriesIndex} />
-    </Switch>
-  </Router>
+  <Switch>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/countries" component={Countries} />
+    <Route exact path="/countries/:code" component={Country} />
+    <Route component={NotFound} />
+  </Switch>
 );
 export default Routes;

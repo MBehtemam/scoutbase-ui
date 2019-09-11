@@ -12,8 +12,8 @@ interface IProps {
 }
 const CountriesIndex = ({ match: { path } }: IProps) => (
   <Switch>
-    <Route exact path={path} component={Countries} />
-    <Route path={`${path}/:code`} component={Country} />
+    <Route exact path="/countries" component={Countries} />
+    <Route exact path="/:code" component={Country} />
   </Switch>
 );
 

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const BrandContainer = styled.div`
   flex: ${props => props.theme.navbar.brandWidth || 1};
@@ -12,7 +13,9 @@ const BrandText = styled.h3`
 
 const NavbarBrand = ({ children }: { children: any }) => (
   <BrandContainer>
-    <BrandText>{children}</BrandText>
+    <BrandText>
+      <Link to="/">{children}</Link>
+    </BrandText>
   </BrandContainer>
 );
 

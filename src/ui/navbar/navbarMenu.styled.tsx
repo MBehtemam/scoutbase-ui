@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router } from "react-router-dom";
 const NavbarMenuList = styled.ul`
   display: flex;
   flex-direction: row;
@@ -11,8 +10,6 @@ const NavbarMenuList = styled.ul`
 `;
 
 const NavbarMenu = ({ children }: { children: any }) => (
-  <Router>
-    <NavbarMenuList>{children}</NavbarMenuList>
-  </Router>
+  <NavbarMenuList>{children}</NavbarMenuList>
 );
 export default NavbarMenu;
