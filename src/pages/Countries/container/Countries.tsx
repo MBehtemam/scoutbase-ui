@@ -9,6 +9,7 @@ function Countries() {
       countries {
         id
         name
+        code
         languages {
           name
           code
@@ -24,7 +25,20 @@ function Countries() {
   `);
   if (loading) return <p>Loading .....</p>;
   if (error) return <p>Error :(</p>;
-  return <span>Hope</span>;
+  const countryData = data.countries.map((country: any) => [
+    country.code.toLowerCase(),
+    {
+      ...country,
+      languages: country.languages
+        .map(
+          (language: any) =>
+            `<b>Language:</b> ${language.name} - <b>Native :</b>${language.native} `
+        )
+        .join("<br/>")
+    }
+  ]);
+  console.log(countryData);
+  return <CountriesMap data={countryData} />;
 }
 
 export default Countries;
