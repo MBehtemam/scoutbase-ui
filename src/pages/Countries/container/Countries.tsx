@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import CountriesMap from "../components/CountriesMap";
 
-function Countries() {
+function Countries(props: any) {
   const { loading, error, data } = useQuery(gql`
     {
       countries {
@@ -37,8 +37,7 @@ function Countries() {
         .join("<br/>")
     }
   ]);
-  console.log(countryData);
-  return <CountriesMap data={countryData} />;
+  return <CountriesMap data={countryData} history={props.history} />;
 }
 
 export default Countries;

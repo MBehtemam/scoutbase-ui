@@ -13,7 +13,7 @@ import {
   Credits
 } from "react-jsx-highmaps";
 
-const CountriesMap = ({ data }) => (
+const CountriesMap = ({ data, history }) => (
   <HighchartsMapChart map={MapGeoJSON}>
     <Title>All Countries</Title>
     <Subtitle>Select one of Countries :)</Subtitle>
@@ -23,7 +23,14 @@ const CountriesMap = ({ data }) => (
       dataLabels={{
         enabled: true,
         color: "#FFFFFF",
-        format: "point.name"
+        format: "{point.name}"
+      }}
+      events={{
+        click: function(e) {
+          if (e.point && e.point.value) {
+            history.push(`/countries/${e.point.value.code.toLowerCase()}`);
+          }
+        }
       }}
     />
     <MapNavigation>

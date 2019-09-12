@@ -1,20 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
 
-interface IProps {
-  match: {
-    params: {
-      code: string;
-    };
-  };
-}
-interface IState {}
+const GET_COUNTRY = gql`
+  query country($code: String!) {
+    country(code: $code) {
+      id
+      name
+      currency
+      phone
+    }
+  }
+`;
 
-class Country extends Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
+function Country(props: any) {
+  const { loading, error, data } = useQuery(GET_COUNTRY, {
+    variables: { code: props.match.params.code }
+  });
+  if (loading) return <p>Loading........</p>;
+  if (error) {
+    return <p>Something bad happen</p>;
   }
-  render() {
-    return <span> Country {this.props.match.params.code}</span>;
-  }
+  return (
+    <p>
+      <b>Currency</b>:{data.country.currency}
+      <br />
+      <b>Phone</b>:{data.country.phone}
+      <br />
+    </p>
+  );
 }
+
 export default Country;

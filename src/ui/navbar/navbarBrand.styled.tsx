@@ -9,6 +9,10 @@ const BrandText = styled.h3`
   font-size: 1.3em;
   color: ${props => props.theme.navbar.brandColor};
   margin-left: 10px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 `;
 
 const NavbarBrand = ({ children }: { children: any }) => (
