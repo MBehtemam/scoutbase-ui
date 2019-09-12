@@ -3,7 +3,7 @@ import Navbar from "../../ui/navbar/navbar.styled";
 import NavbarBrand from "../../ui/navbar/navbarBrand.styled";
 import NavbarMenu from "../../ui/navbar/navbarMenu.styled";
 import NavbarMenuItem from "../../ui/navbar/navbarMenuItem";
-
+import AuthenticateNavbar from "../AuthenticateNavbar/AuthenticateNavbar";
 class MainNavbar extends React.Component {
   render() {
     return (
@@ -15,6 +15,7 @@ class MainNavbar extends React.Component {
           <NavbarMenuItem to="/actors">Actors</NavbarMenuItem>
           <NavbarMenuItem to="/directors">Directors</NavbarMenuItem>
         </NavbarMenu>
+        <AuthenticateNavbar />
       </Navbar>
     );
   }

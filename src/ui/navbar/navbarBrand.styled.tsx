@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const BrandContainer = styled.div`
-  flex: ${props => props.theme.navbar.brandWidth || 1};
-`;
+const BrandContainer = styled.div``;
 const BrandText = styled.h3`
   font-size: 1.3em;
   color: ${props => props.theme.navbar.brandColor};
