@@ -1,44 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Scoutbase UI and Server
 
-## Available Scripts
+![scoutbase-ui screenshot](https://raw.githubusercontent.com/mbehtemam/scoutbase-ui/master/images/countries-2.png)
+there are two repositories that contains what I do for Scoutbase . one of them is
+[Scoutbase-UI](https://github.com/mbehtemam/scoutbase-ui) and the other one is [Scoutbase-Server](https://github.com/mbehtemam/scoutbase-server)
 
-In the project directory, you can run:
+## Scoutbase Server
 
-### `npm start`
+Scoutbase was written with Node JS, Typescript , Apollo Server, GraphQL , KnexJS and Sqlite as a database. also I include database that I using and fill it with some data.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installing and Running Scoutbase Server
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- clone the repository
+- install the packages with yarn or npm
+- run the server after compiling it with Typescript
+- sever will run on port 4000
 
-### `npm test`
+so :
+first
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+    $ git clone https://github.com/MBehtemam/scoutbase-server.git
+```
 
-### `npm run build`
+then :
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+    $ cd scoutbase-server && yarn install
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+for running Typescript compiler and also running server you can run this command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+    $ yarn dev
+```
 
-### `npm run eject`
+after this command Typescript compile all the codes and server runs on port 4000
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Scoutbase UI
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Scoutbase UI is a UI that written with React, styled-components, Typescript , Apollo Client, React-Router, Highchart and Flexbox for css layouts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installing and Running Scoutbase UI
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- clone the repository
+- install the packages with yarn or npm
+- run the UI after compiling it with Typescript
+- ui will run on port 3000 and automatically connect to server on port 54000
 
-## Learn More
+so :
+first
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+    $ git clone https://github.com/mbehtemam/scoutbase-server
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+then :
+
+```sh
+    $ cd scoutbase-ui && yarn install
+```
+
+for running Typescript compiler and also running ui you can run this command:
+
+```sh
+    $ yarn start
+```
